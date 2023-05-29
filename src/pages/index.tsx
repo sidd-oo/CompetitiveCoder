@@ -1,12 +1,40 @@
 import ProblemsTable from "@/components/ProblemsTable/ProblemsTable";
 import Topbar from "@/components/Topbar/Topbar";
+import { firestore } from "@/firebase/firebase";
 import useHasMounted from "@/hooks/useHasMounted";
+import { doc, setDoc } from "firebase/firestore";
 
 import { useState } from "react";
 
 export default function Home() {
 	const [loadingProblems, setLoadingProblems] = useState(true);
 	const hasMounted = useHasMounted();
+	// const [inputs, setInputs] = useState({
+	// 	id: "",
+	// 	title: "",
+	// 	difficulty: "",
+	// 	category: "",
+	// 	videoId: "",
+	// 	link: "",
+	// 	order: "",
+	// 	likes: "",
+	// 	dislikes: "",
+	// })
+
+	// const handleInputChange = (e: any) => {
+	// 	setInputs({...inputs, [e.target.name]: e.target.value})
+	// }
+
+	// const handleSumbit = async(e: any)=>{
+	// 	e.preventDefault();
+
+	// 	const newProblem = {
+	// 		...inputs, 
+	// 		order: Number(inputs.order), 	
+	// 	};
+	// 	await setDoc(doc(firestore, "problems", inputs.id), newProblem);
+	// 	alert("Saved to DB")
+	// }
 
 	if (!hasMounted) return null;
 
@@ -54,6 +82,16 @@ export default function Home() {
 						<ProblemsTable setLoadingProblems={setLoadingProblems} />
 					</table>
 				</div>
+				{/* <form className="p-6 flex flex-col max-w-sm gap-3"  onSubmit={handleSumbit}>
+					<input onChange={handleInputChange} type="text" placeholder="problem id" name="id" />
+					<input onChange={handleInputChange} type="text" placeholder="title" name="title" />
+					<input onChange={handleInputChange} type="text" placeholder="difficulty" name="difficulty" />
+					<input onChange={handleInputChange} type="text" placeholder="category" name="category" />
+					<input onChange={handleInputChange} type="text" placeholder="order" name="order" />
+					<input onChange={handleInputChange} type="text" placeholder="videoId?" name="videoId" />
+					<input onChange={handleInputChange} type="text" placeholder="link?" name="link" />
+					<button className="bg-white">Save to DM</button>
+				</form> */}
 			</main>
 		</>
 	);

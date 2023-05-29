@@ -8,10 +8,10 @@ import { authModalState } from "@/atoms/authModalAtom";
 import Image from "next/image";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { BsList } from "react-icons/bs";
-// import Timer from "../Timer/Timer";
+import Timer from "../Timer/Timer";
 import { useRouter } from "next/router";
-// import { problems } from "@/utils/problems";
-// import { Problem } from "@/utils/types/problem";
+import { problems } from "@/utils/problems";
+import { Problem } from "@/utils/types/problem";
 
 type TopbarProps = {
 	problemPage?: boolean;
@@ -77,12 +77,12 @@ const Topbar: React.FC<TopbarProps> = ({ problemPage }) => {
 				<div className='flex items-center space-x-4 flex-1 justify-end'>
 					<div>
 						<a
-							href='https://www.buymeacoffee.com/burakorkmezz'
+							href='https://github.com/sidd-oo'
 							target='_blank'
 							rel='noreferrer'
 							className='bg-dark-fill-3 py-1.5 px-3 cursor-pointer rounded text-brand-orange hover:bg-dark-fill-2'
 						>
-							Premium
+							Github
 						</a>
 					</div>
 					{!user && (
