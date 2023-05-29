@@ -11,7 +11,7 @@ import { BsList } from "react-icons/bs";
 import Timer from "../Timer/Timer";
 import { useRouter } from "next/router";
 import { problems } from "@/utils/problems";
-import { Problem } from "@/utils/types/problems";
+import { Problem } from "@/utils/types/problem";
 
 type TopbarProps = {
 	problemPage?: boolean;
